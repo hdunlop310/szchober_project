@@ -1,0 +1,6 @@
+How to set up virtual enviroment: 
+1. Create workspace directory
+2. Create virtual enviroment using anaconda prompt inside workspace: conda create -n szchober python=3.7.2
+3. pip install django==2.2.3
+4. pip install pillow
+5. clone github repo 
