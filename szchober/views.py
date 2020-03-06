@@ -1,7 +1,8 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Hello world! this is the home page!!")
+    return render(request, 'szchober/index.html')
 
 def sign_up(request):
     return HttpResponse("sign up page - become a driver/rider")
