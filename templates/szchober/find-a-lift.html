@@ -2,8 +2,44 @@
 <html>
     <head>
         <title>find a lift</title>
+        <link rel="stylesheet" type="text/css" href="/Users/dunlop/workspace/szchober_project/static/styles/style.css"/>
     </head>
     <body>
-        <h1>find a lift</h1>
+        <div class="p">
+            <div class="header">
+                <div class="container">
+        <h1>Find a lift</h1>
+                </div>
+            </div>
+        </div>
+    <div class="mapcontainer">
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center:  {lat: 55.8721, lng: -4.2882},
+          mapTypeControl: false,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.TOP_CENTER
+          },
+          zoomControl: false,
+          zoomControlOptions: {
+              position: google.maps.ControlPosition.LEFT_CENTER
+          },
+          scaleControl: false,
+          streetViewControl: false,
+          streetViewControlOptions: {
+              position: google.maps.ControlPosition.LEFT_TOP
+          },
+          fullscreenControl: false
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAyB5pYSYqOo5T0ih5jDjKJJpsNR_LVO8&callback=initMap">
+    </script>
+    </div>
     </body>
 </html>
