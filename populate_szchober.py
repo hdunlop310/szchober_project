@@ -2,11 +2,24 @@ import os
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                       'szchober_project.settings')
-
+from random import randint
 import django
 
 django.setup()
-from szchober.models import User, Lift, Rating
+from szchober.models import User, Lift, Rating, Feedback
+
+def add_ride(start,end,price,distance):
+    liftid = randint(4,4)
+    c = Lift.objects.get_or_create(liftid=liftid,start=start,end=end,price=price,distance=distance)[0]
+    c.save()
+    return c
+
+def add_feedback(description):
+    fid=randint(10,10)
+    f = Feedback.objects.get_or_create(feedid=fid,description=description)[0]
+    f.save()
+    return f
+
 
 def populate():
     users = [{'forename': 'Jerri',
@@ -56,11 +69,11 @@ def populate():
         'price': 3.12}
     ]
 
-    feedback = [
-        {'feedback id' : 'f523985729',
-        'description': 'This app is very good'}
-    ]
-
+    feedback =[
+            {'feedback id' : 'f523985729','description': 'This app is very good'}
+            {'feedback id' : 'f213124123','description': 'This app is good'}
+            {'feedback id' : 'f213124123','description': 'This app barely alright'}
+                ]
     rating = [
         {'rating id' : 'ra13733874',
         'description': 'very good',
@@ -71,6 +84,8 @@ def populate():
     for us, user_data in users.items():
         u = add_user(us, user_data[''])
 
+    for feedback,feedback_disc in feedback.items():
+        f=add_feedback(feedback,feedback_disc)
 
 if __name__ == '__main__':
     print('Starting Rango population script...')
