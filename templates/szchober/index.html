@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
     <div class="p">
@@ -21,7 +21,53 @@
         <div class="container">
             <div class="lift">
                 <div class="block">
-                    <h2>Find a <br/>Lift.</h2>
+                    <a class="gradient-button" onmouseover="mouseOver()" onmouseout="mouseOut ()" onmousedown="mouseClick ()">Find a </br> Lift.</a>
+					<div id="car">
+					
+					<script>
+						function mouseOver(){
+						var elem = document.getElementById("car");
+						var pos = -50;
+						var id = setInterval(frame, 5);
+							function frame(){
+								if (pos == -20){
+									clearInterval(id)
+								}else{
+									pos++;
+									elem.style.left = pos + "px";//moves object right
+								}
+							}
+						}
+
+						function mouseOut(){
+							var elem = document.getElementById("car");
+							var pos = -20;
+							var id = setInterval(frame, 5);
+							function frame(){
+								if (pos == -50){
+									clearInterval(id)
+								}else{
+									pos--;
+									elem.style.left = pos + "px";//moves object right
+								}
+							}
+						}	
+		
+						function mouseClick(){
+							var elem = document.getElementById("car");
+							var pos = -20;
+							var id = setInterval(frame, 5);
+							function frame(){
+								if (pos == 20){
+									clearInterval(id)
+								}else{
+									pos++;
+									elem.style.left = pos + "px";//moves object right
+								}
+							}
+						}
+
+					</script>
                 </div>
             </div>
         </div>
