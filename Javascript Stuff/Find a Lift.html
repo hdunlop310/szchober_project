@@ -5,13 +5,15 @@ body{
 	background-color: rgb(100,168,116);
 }
 #car{
-	width: 50px;
-	height: 50px;
+	width: 700px;
+	height: 700px;
 	position: absolute;
 	z-index:-1;
-	background: red;
-	top: 140px;
-	left: 200px;
+	background-color:red;
+	top: -170px;
+	left: -50px;
+	background: url("car.png");
+	background-size: 100% auto;
 }
 
 .gradient-button {
@@ -28,6 +30,7 @@ body{
     cursor: pointer;
     display: inline-block;
 	border-right: 2px solid white;
+	box-shadow: 3px 0px rgba(0,0,0,0.08);
 	background-color: rgb(100,168,116);
 }
 .gradient-button:hover{
@@ -44,17 +47,17 @@ body{
 </head>
 
 <body>
-	<h1>Gradient Button</h1>
+
 	<a class="gradient-button" onmouseover="mouseOver()" onmouseout="mouseOut ()" onmousedown="mouseClick ()">Find a </br> Lift.</a>
 	<div id="car"></a>
 	
 	<script>
 		function mouseOver(){
 			var elem = document.getElementById("car");
-			var pos = 200;
+			var pos = -50;
 			var id = setInterval(frame, 5);
 			function frame(){
-				if (pos == 250){
+				if (pos == -20){
 					clearInterval(id)
 				}else{
 					pos++;
@@ -65,10 +68,10 @@ body{
 
 		function mouseOut(){
 			var elem = document.getElementById("car");
-			var pos = 250;
+			var pos = -20;
 			var id = setInterval(frame, 5);
 			function frame(){
-				if (pos == 200){
+				if (pos == -50){
 					clearInterval(id)
 				}else{
 					pos--;
@@ -79,10 +82,10 @@ body{
 		
 		function mouseClick(){
 			var elem = document.getElementById("car");
-			var pos = 250;
+			var pos = -20;
 			var id = setInterval(frame, 5);
 			function frame(){
-				if (pos == 265){
+				if (pos == 20){
 					clearInterval(id)
 				}else{
 					pos++;
