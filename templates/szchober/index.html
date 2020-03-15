@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+{% load staticfiles %}
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="{% static "styles/style.css" %}" />
 </head>
 <body>
     <div class="p">
@@ -10,7 +11,7 @@
         <div class="container">
             <h1>Szch<span style="color: green">ö</span>ber</h1>
 			<p class="p"><a href="about-us.html">About us</a></p>
-			<p class="p"><a href="about-us.html">Sign up</a></p>
+			<p class="p"><a href="sign-up.html">Sign up</a></p>
             <p class="p">Driver</p>
             <p class="p">Rider</p>
             <p class="p">Log in</p>
@@ -60,7 +61,7 @@
 							function frame(){
 								if (pos == 20){
 									clearInterval(id)
-									window.open("find-a-lift.html","_self");
+									window.open("szchober/find-a-lift/","_self");
 								}else{
 									pos++;
 									elem.style.left = pos + "px";//moves object right

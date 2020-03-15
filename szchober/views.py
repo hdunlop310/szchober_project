@@ -20,7 +20,7 @@ def myAccount_driver(request):
     return HttpResponse("this is my driver account")
 
 def find_lift(request):
-    return HttpResponse("find lift page")
+    return render(request, 'szchober/find-a-lift.html')
 
 def about(request):
     return HttpResponse("the about page")

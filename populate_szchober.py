@@ -70,8 +70,8 @@ def populate():
     ]
 
     feedback =[
-            {'feedback id' : 'f523985729','description': 'This app is very good'}
-            {'feedback id' : 'f213124123','description': 'This app is good'}
+            {'feedback id' : 'f523985729','description': 'This app is very good'},
+            {'feedback id' : 'f213124123','description': 'This app is good'},
             {'feedback id' : 'f213124123','description': 'This app barely alright'}
                 ]
     rating = [
