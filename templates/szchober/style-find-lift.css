@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.header {
+    padding: 30px, 0px, 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.body {
+    background-color: Gainsboro;
+    max-width: 1200px;
+    margin-left: 50px;
+    margin-right: 50px;
+    min-height: auto;
+    max-height: auto;
+  }
+
+
+
+.block{
+    display: inline-block;
+    text-align: left;
+	height: 180px;  
+    width: 400px; 
+}
+
+.p{
+    display: inline-block;
+    padding-right: 15px;
+}
+
+#map {
+    height: 400px;  
+    width: 400px;  
+    align-self: right;
+    text-align: right;
+    position: fixed;
+    box-shadow: 10px 10px 5px #aaaaaa;
+   }
+
+
+h2{
+    color: rgb(100,168,116);
+}
+
+h3{
+    color: white;
+}
+.container-available-drivers{
+    background-color: rgb(100,168,116) ;
+}
+
+.container-supermarket-info{
+    background-color: white;
+}
+
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+
+  input[type=text]:focus {
+    border: 3px solid #555;
+  }
+
+  button{
+      float: right;
+      background-color: transparent;
+      border-color: rgb(100,168,116);
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: white;
+  }
