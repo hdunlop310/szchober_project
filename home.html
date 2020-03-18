@@ -3,37 +3,89 @@
     <head>
         <title>Szch&#246ber.</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-    
+
     </head>
     <body>
         <header id="main-header">
             <div class="main-header">
                 <a href="#"><h1>Szch<span>&#246</span>ber.</h1></a>
-                
+                <br>
             </div>
         </header>
             <nav id="navbar">
                 <ul class="navbar-left">
-                    <li><a href="#">Driver</a></li>
+                    <li><a href="http://google.com">Driver</a></li>
                     <li><a href="#">Rider</a></li>
                     <li><a href="#">About us</a></li>
                 </ul>
+
                 <ul class="navbar-right">
-                    <li><a href="#">Log in</a></li>
+                    <li class="login"><a href="#">Log in</a></li>
                     <li class="signup"><a href="#">Sign up</a></li>
                 </ul>
+                <br>
+                <br>
             </nav>
 
         <section class="boxed">
+            <div style="min-width: 10px; min-height: 50px; display: block; z-index: 10;"></div>
+            <div style="min-width: 28%; min-height: 10px; display: inline-block; z-index: 10;"></div>
+            <a id="textid" class="gradient-button" onmouseover="mouseOver()" onmouseout="mouseOut ()" onmousedown="mouseClick ()">Find a </br> Lift.</a>
+            <div id="car"></div>
+            <!--
             <div class="liftcase">
-            <div class="lifttext">Find a Lift.</div>
-            <div class="liftimg"><img src="static/images/car.png"></div>
-            <br>
+                <div class="lifttext"><br>Find a <br>Lift.<br><span style="opacity:0;">invis</span></div>
+                <div class="liftimg"><img src="static/images/car.png"></div>
+                <br>
             </div>
+            -->
         </section>
-        <section>
+        <div class="javascriptdiv">
+            <script>
+                    function mouseOver(){
+                        var elem = document.getElementById("car");
+                        var pos = 200;
+                        var id = setInterval(frame, 5);
+                        function frame(){
+                            if (pos == 230){
+                                clearInterval(id)
+                            }else{
+                                pos++;
+                                elem.style.left = pos + "px";//moves object right
+                            }
+                        }
+                    }
             
-        </section>
+                    function mouseOut(){
+                        var elem = document.getElementById("car");
+                        var pos = 230;
+                        var id = setInterval(frame, 5);
+                        function frame(){
+                            if (pos == 200){
+                                clearInterval(id)
+                            }else{
+                                pos--;
+                                elem.style.left = pos + "px";//moves object right
+                            }
+                        }
+                    }	
+                    
+                    function mouseClick(){
+                        var elem = document.getElementById("car");
+                        var pos = 300;
+                        var id = setInterval(frame, 5);
+                        function frame(){
+                            if (pos == 310){
+                                clearInterval(id)
+                            }else{
+                                pos++;
+                                elem.style.left = pos + "px";//moves object right
+                            }
+                        }
+                    }
+            
+                </script>
+            </div>
     </body>
 
 </html>
