@@ -111,6 +111,7 @@ a:active {
     background-color: white;
     color: rgb(100,168,116);;
     text-align: center;
+    overflow: scroll;
   }
 
 .body {

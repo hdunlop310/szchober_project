@@ -13,4 +13,5 @@ urlpatterns = [
     path('my-account-driver/', views.myAccount_driver, name='my_driver_account'),
     path('about-us/', views.about, name='about'),
     path('register/', views.register, name='register'),
+    path('login/', views.user_login, name='login'),
 ]

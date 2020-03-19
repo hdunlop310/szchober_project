@@ -4,6 +4,11 @@ from django.contrib.auth.models import User
 from szchober.models import UserProfile
 from szchober.forms import UserForm, UserProfileForm
 
+from django.contrib.auth import authenticate, login 
+from django.http import HttpResponse
+from django.urls import reverse
+from django.shortcuts import redirect
+
 
 def index(request):
     return render(request, 'szchober/index.html')
@@ -65,3 +70,24 @@ def register(request):
                     context = {'user_form': user_form,
                                 'profile_form': profile_form,
                                 'registered': registered})
+
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return redirect(reverse('szchober:index'))
+            else:
+                return HttpResponse("Your account is disabled")
+        else:
+            print("Invalid login details")
+            return HttpResponse("Invalid login details supplied")
+    else:
+        return render(request, 'szchober/login.html')
+
