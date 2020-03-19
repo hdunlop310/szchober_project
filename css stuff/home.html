@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-{% load staticfiles %}
 <html>
-<head>
-	<link rel="stylesheet" href="{% static "styles/style.css" %}" />
-</head>
-<body>
-	<div class="p">
-		<div class="header">
-			<div class="container">
-				<h1><a href='/szchober/'>Szch<span style="color: green">ö</span>ber</a></h1>
-			</div>
-		</div>
-		</div>
-    <div class="body">
-        <div class="container">
-            <div class="lift">
-                <div class="block">
-                    <a class="gradient-button" onmouseover="mouseOver()" onmouseout="mouseOut ()" onmousedown="mouseClick ()">Find a </br> Lift.</a>
-					<div id="car">
+    <head>
+        <title>Szch&#246ber.</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <header id="main-header">
+            <div class="main-header">
+                <a href="#"><h1>Szch<span>&#246</span>ber.</h1></a>
+
+            </div>
+        </header>
+            <nav id="navbar">
+                <ul class="navbar-left">
+                    <li><a href="#">Driver</a></li>
+                    <li><a href="#">Rider</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+                <ul class="navbar-right">
+                    <li><a href="#">Log in</a></li>
+                    <li class="signup"><a href="#">Sign up</a></li>
+                </ul>
+            </nav>
+
+        <section class="boxed">
+            
+            <div class="liftcase">
+                <a class="gradient-button" onmouseover="mouseOver()" onmouseout="mouseOut ()" onmousedown="mouseClick ()">Find a </br> Lift.</a>
+                <div id="car">
 					
 					<script>
 						function mouseOver(){
@@ -67,14 +77,7 @@
 					</script>
                 </div>
             </div>
-        </div>
-	</div>
-	
-	<div class="footer">
-        <div class="container">
-            <h1>Szch<span style="color: green">ö</span>ber</h1>
-        </div>
-    </div>
-</body>
+        </section>
+    </body>
 
-</html>
+</html> 
