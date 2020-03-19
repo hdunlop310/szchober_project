@@ -12,4 +12,5 @@ urlpatterns = [
     path('find-a-lift/', views.find_lift, name='find_a_lift'),
     path('my-account-driver/', views.myAccount_driver, name='my_driver_account'),
     path('about-us/', views.about, name='about'),
+    path('register/', views.register, name='register'),
 ]
