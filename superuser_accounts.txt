@@ -1,7 +1,0 @@
-superusers 
-
-username - your first name all lower case
-password - WADTeam2020
-email - your gmail email
-
-if superuser login at localhost/admin doesnt work then you might have to remake it sorry
