@@ -30,6 +30,7 @@ def myAccount_rider(request):
 def myAccount_driver(request):
     return HttpResponse("this is my driver account")
 
+@login_required
 def find_lift(request):
     return render(request, 'szchober/find-a-lift.html')
 
