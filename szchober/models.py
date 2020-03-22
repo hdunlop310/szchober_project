@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Driver(models.Model):
+    #user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    is_driver = models.BooleanField(default=False)
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
     password = models.CharField(max_length=20, default='')
@@ -11,7 +13,6 @@ class Driver(models.Model):
     phone_number = models.CharField(max_length=11, default='')
     rating = models.IntegerField(default=5)
     review = models.CharField(max_length=128, default='')
-    #picture = models.ImageField(upload_to='profile_images', blank=True)
     driver_id = models.CharField(max_length=10, unique=True)
     car_make = models.CharField(max_length=10, default='')
     car_model = models.CharField(max_length=10, default='')
@@ -23,6 +24,8 @@ class Driver(models.Model):
 
 
 class Rider(models.Model):
+    #user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    is_rider = models.BooleanField(default=False)
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
     password = models.CharField(max_length=20, default='')
@@ -33,8 +36,6 @@ class Rider(models.Model):
     address = models.CharField(max_length=128, default='')
     postcode = models.CharField(max_length=7, default='')
     rider_id = models.CharField(max_length=10, unique=True, default='')
-
-    #picture = models.ImageField(upload_to='profile_images', blank=True)
 
     def __str__(self):
         return self.rider_id
@@ -71,11 +72,18 @@ class Rating(models.Model):
         return self.rating_id
 
 
+class User(models.Model):
+    is_rider = models.BooleanField(default=False)
+    is_driver = models.BooleanField(default=False)
+
+
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance. user = models.OneToOneField(User, on_delete=models.CASCADE)
     # # The additional attributes we wish to include.
     # website = models.URLField(blank=True)
     picture = models.ImageField(upload_to='profile_images', blank=True)
+    is_rider = models.BooleanField(default=False)
+    is_driver = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.user.username
+        return "User"

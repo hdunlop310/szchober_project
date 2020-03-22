@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
     <head>
         <title>Sign-up</title>
@@ -6,8 +7,7 @@
     <body>
         <h1>Sign-up landing page</h1>
         <ul>
-            <li>become a rider</li>
-            <li>become a driver</li>
-        </ul>
+            <a href= "{% url 'szchober:sign-up/become-a-rider' %}"><li>become a rider</li></a>
+            <a href= "{% url 'szchober:sign-up/become-a-driver' %}"><li>become a driver</li></a>
     </body>
 </html>
