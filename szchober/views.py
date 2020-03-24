@@ -19,10 +19,10 @@ def sign_up(request):
     return render(request, 'szchober/sign-up.html')
 
 def become_rider(request):
-    return HttpResponse("sign up subpage - become a rider")
+    return render(request, 'szchober/become-a-rider.html')
 
 def become_driver(request):
-    return HttpResponse("sign up subpage - become a driver")
+    return render(request, 'szchober/become-a-driver.html')
 
 def myAccount_rider(request):
     return HttpResponse("this is my rider account")
@@ -30,7 +30,7 @@ def myAccount_rider(request):
 def myAccount_driver(request):
     return HttpResponse("this is my driver account")
 
-@login_required
+#@login_required
 def find_lift(request):
     return render(request, 'szchober/find-a-lift.html')
 
