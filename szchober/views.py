@@ -19,10 +19,70 @@ def sign_up(request):
     return render(request, 'szchober/sign-up.html')
 
 def become_rider(request):
-    return render(request, 'szchober/become-a-rider.html')
+    registered = False
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        profile_form = UserProfileForm(request.POST)
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+
+            user.set_password(user.password)
+            user.save()
+
+            profile = profile_form.save(commit=False)
+            profile.user = user
+
+            if 'picture' in request.FILES:
+                profile.picture = request.FILES['picture']
+            
+            profile.save()
+            registered = True
+        
+        else:
+            print(user_form.errors, profile_form.errors)
+    else:
+        user_form = UserForm()
+        profile_form = UserProfileForm()
+
+    
+    return render(request,
+                    'szchober/become-a-rider.html',
+                    context = {'user_form': user_form,
+                                'profile_form': profile_form,
+                                'registered': registered})
 
 def become_driver(request):
-    return render(request, 'szchober/become-a-driver.html')
+    registered = False
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        profile_form = UserProfileForm(request.POST)
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+
+            user.set_password(user.password)
+            user.save()
+
+            profile = profile_form.save(commit=False)
+            profile.user = user
+
+            if 'picture' in request.FILES:
+                profile.picture = request.FILES['picture']
+            
+            profile.save()
+            registered = True
+        
+        else:
+            print(user_form.errors, profile_form.errors)
+    else:
+        user_form = UserForm()
+        profile_form = UserProfileForm()
+
+    
+    return render(request,
+                    'szchober/become-a-driver.html',
+                    context = {'user_form': user_form,
+                                'profile_form': profile_form,
+                                'registered': registered})
 
 def myAccount_rider(request):
     return HttpResponse("this is my rider account")
