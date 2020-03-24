@@ -2,12 +2,27 @@
 {% load staticfiles %}
 <html>
     <head>
-        <title>Sign-up</title>
+        <title>Szch&#246ber.</title>
+        <link rel="stylesheet" type="text/css" href="templatestyles.css">
+        <h1>Sign-up</h1>
     </head>
     <body>
         <h1>Sign-up landing page</h1>
         <ul>
-            <a href= "{% url 'szchober:sign-up/become-a-rider' %}"><li>become a rider</li></a>
-            <a href= "{% url 'szchober:sign-up/become-a-driver' %}"><li>become a driver</li></a>
+        <section class="boxed">
+            <div class="">
+                    <div class="displaydriver">
+                        <a href= "{% url 'szchober:sign-up/become-a-driver' %}">Become a Driver</a>
+                        <a href="{% url 'szchober:sign-up/become-a-rider' %}"><img src="../../static/images/car.png" alt="car" style="width:50%; border: 1px black solid; background-color: rgb(44, 131, 83);" ></a>
+
+                    </div>
+                    <div class="displayrider">
+                        <a href= "{% url 'szchober:sign-up/become-a-rider' %}"><li>Become a Rider</li></a>
+                        <img src="../../static/images/car.png" alt="car" style="width:50%; border: 1px black solid;">
+
+                    </div>
+
+            </div>
+        </section>            
     </body>
 </html>
