@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--{% load staticfiles %}-->
+{% load staticfiles %}
 <html>
     <head>
         <title>Szch&#246ber.</title>
-        <link rel="stylesheet" type="text/css" href="templatestyles.css">
+        <link rel="stylesheet" type="text/css" href="{% static "styles/templatestyles.css" %}" >
     </head>
     <body>
         <header id="main-header">
@@ -33,11 +33,11 @@
                         <h3 style="display: inline">Become a Rider</h3>
                     </div>
                     <div>
-                        <a href="{% url 'szchober:sign-up/become-a-rider' %}"><img src="../../static/images/car.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" ></a>
+                        <a href="{% url 'szchober:become-a-rider' %}"><img src="../../static/images/car.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" ></a>
                         <br>
                     </div>
                     <div>
-                        <a href= "{% url 'szchober:sign-up/become-a-rider' %}"><img src="../../static/images/seatblack.png" alt="car" style="width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;"></a>
+                        <a href= "{% url 'szchober:become-a-rider' %}"><img src="../../static/images/seatblack.png" alt="car" style="width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;"></a>
 
                     </div>
 
