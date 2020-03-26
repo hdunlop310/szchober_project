@@ -1,4 +1,78 @@
+<!DOCTYPE html>
+<!--{% load staticfiles %}-->
+<html>
+    <head>
+        <title>Szch&#246ber.</title>
+        <link rel="stylesheet" type="text/css" href="templatestyles.css">
+    </head>
+    <body>
+        <header id="main-header">
+            <div class="main-header">
+                <a href="#"><h1>Szch<span>&#246</span>ber.</h1></a>
 
+            </div>
+        </header>
+            <nav id="navbar">
+                <ul class="navbar-left">
+                    <li><a href="#">Driver</a></li>
+                    <li><a href="#">Rider</a></li>
+                    <li ><a href="#" style="color: rgb(44, 131, 83)">About us</a></li>
+                </ul>
+                <ul class="navbar-right">
+                    <li class="login"><a href="#">Log in</a></li>
+                    <li class="signup"><a href="#" style="color: rgb(44, 131, 83);">Sign up</a></li>
+                </ul>
+            </nav>
+            <h1 style="font-size: 18pt; visibility: hidden;">You can't see me</h1>
+            <br>
+
+            <section class="boxed" >
+                <div>
+                    <h3 style="display: inline;">Become a Driver</h3>
+                </div>
+                <div>
+                    <h3 style="display: inline;">Register</h3>
+                </div>
+                <div>
+                    <a href="{% url 'szchober:sign-up/become-a-rider' %}"><img src="../../static/images/carf.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" ></a>
+                    <br>
+                </div>
+                <div>
+                    <div style="border: 2px  rgb(44, 131, 83) solid; width: 300px; height: 300px; padding-top: 4%; ">
+                        
+
+                        <!-- Input database file here -->
+                        <form action="process.php" method="POST">
+                            <div>
+                                <div class="twoperline">
+                                    <input type="text" name="forename" placeholder="Forename"  >
+                                    <input type="text" name="surname" placeholder="Surname" >
+                                </div>
+                                <input class="oneperline" type="email" name="email" placeholder="Email">
+                                <input class="oneperline" type="password" name="password" placeholder="Password">
+                                <input class="oneperline" type="tel" name="phone" placeholder="Phone Number">
+                                <div class="twoperline">
+                                    <input type="text" name="carmake" placeholder="Car Make"> 
+                                    <input type="text" name="carmodel" placeholder="Car Model" >
+                                </div>
+                                <input class="oneperline" type="text" name="regplate" placeholder="Registration Plate">
+                                <input class="submitbutton" type="submit" name="submit" value="Submit">
+
+
+
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+    </section>     
+
+
+
+
+<!--
 {% load staticfiles %}
 
 {% block title_block %}
@@ -24,3 +98,27 @@ Rango says:<strong>thank you for registering!</strong>
 </form>
 {% endif %}
 {% endblock %}
+-->
+        
+    </section>
+    <footer>
+        <br>
+        <nav id="navbar">
+            <ul class="navbar-left">
+                <li><a href="#"><img src="../../static/images/420px-Globe_icon.svg.png" alt=""></a></li>
+                <li><a href="#">
+                    <div>
+                        <h3 style="color: black;">Contact us</h3>
+                        <h1 style="color: rgb(44, 131, 83); font-size: 10px; padding-top: 5px ;">+44 749 4671 324</h1>
+                        <h1 style="color: rgb(44, 131, 83); font-size: 10px; padding-top: 5px ;">Feedback</h1>
+                    </div>
+                </a></li>
+            </ul>
+            <ul class="navbar-right">
+                <li><a href="#"><img src="../../static/images/download-on-app-store-png-2.png" alt=""></a></li>
+                <li><a href="#"><img src="../../static/images/socials.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </footer>
+    </body>
+</html>

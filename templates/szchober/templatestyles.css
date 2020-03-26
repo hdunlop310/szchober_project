@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     text-align: center;
+    justify-items: center;
 
 }
 
@@ -319,3 +320,31 @@ a:link {
 	background-image: linear-gradient(to right, rgba(255,217,102,0), rgba(255,217,102,1));
 }
 
+
+.oneperline{
+    width: 98%;
+    padding: 5px;
+    margin: 4px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.twoperline{
+    width: 98%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.twoperline input{
+    width: 98%;
+    padding: 5px;
+    margin: 4px 3px;
+
+}
+
+.submitbutton{
+    padding: 10px 20px;
+    background-color: rgb(100,168,116);
+}
