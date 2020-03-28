@@ -1,10 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-class Driver(models.Model):
-    #user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+class Driver(AbstractUser):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     is_driver = models.BooleanField(default=False)
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
@@ -23,8 +23,8 @@ class Driver(models.Model):
         return self.driver_id
 
 
-class Rider(models.Model):
-    #user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+class Rider(AbstractUser):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     is_rider = models.BooleanField(default=False)
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')

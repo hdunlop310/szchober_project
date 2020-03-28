@@ -12,7 +12,7 @@ urlpatterns = [
     path('find-a-lift/', views.find_lift, name='find_a_lift'),
     path('my-account-driver/', views.myAccount_driver, name='my_driver_account'),
     path('about-us/', views.about, name='about-us'),
-    path('register/', views.register, name='register'),
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),
+    path('feedback/', views.feedback, name='feedback'),
 ]
