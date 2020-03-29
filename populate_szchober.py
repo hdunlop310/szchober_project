@@ -9,20 +9,6 @@ django.setup()
 from szchober.models import Driver, Rider, Lift, Rating, Feedback
 
 
-def add_ride(start, end, price, distance):
-    liftid = randint(4, 4)
-    c = Lift.objects.get_or_create(liftid=liftid, start=start, end=end, price=price, distance=distance)[0]
-    c.save()
-    return c
-
-
-def add_feedback(description):
-    fid = randint(10, 10)
-    f = Feedback.objects.get_or_create(feedid=fid, description=description)[0]
-    f.save()
-    return f
-
-
 def populate():
     drivers = [{'is_driver': True,
                 'forename': 'Jerri',
@@ -121,10 +107,11 @@ def add_driver(is_driver, forename, surname, password, email, phone_number, rati
 
 def add_rider(is_rider, forename, surname, password, email, phone_number, rating, review, address, postcode, rider_id):
     r = \
-    Rider.objects.get_or_create(is_rider=is_rider, forename=forename, surname=surname, password=password, email=email,
-                                phone_number=phone_number,
-                                rating=rating, review=review, address=address, postcode=postcode,
-                                rider_id=rider_id)[0]
+        Rider.objects.get_or_create(is_rider=is_rider, forename=forename, surname=surname, password=password,
+                                    email=email,
+                                    phone_number=phone_number,
+                                    rating=rating, review=review, address=address, postcode=postcode,
+                                    rider_id=rider_id)[0]
     r.save()
     return r
 

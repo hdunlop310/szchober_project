@@ -1,10 +1,37 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
+import uuid
+
 
 # Create your models here.
-class Driver(AbstractUser):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
+class MyUUIDModel(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+
+
+class CustomUser(AbstractUser):
+    type_choices = (
+        ('D', 'Driver'),
+        ('R', 'Rider'),
+
+    )
+    user_type = models.CharField(max_length=1,
+                                 choices=type_choices,
+                                 default='')
+
+
+class UserDetails(models.Model):
+    type = models.OneToOneField('CustomUser', on_delete=models.CASCADE)
+    extra_info = models.CharField(max_length=200)
+
+
+class Driver(models.Model):
+    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE)
     is_driver = models.BooleanField(default=False)
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
@@ -13,18 +40,18 @@ class Driver(AbstractUser):
     phone_number = models.CharField(max_length=11, default='')
     rating = models.IntegerField(default=5)
     review = models.CharField(max_length=128, default='')
-    driver_id = models.CharField(max_length=10, unique=True)
+    driver_id = models.UUIDField()
     car_make = models.CharField(max_length=10, default='')
     car_model = models.CharField(max_length=10, default='')
     car_registration = models.CharField(max_length=8, unique=True, default='')
-    availability = models.BooleanField()
+    availability = models.BooleanField(default=False)
 
     def __str__(self):
         return self.driver_id
 
 
-class Rider(AbstractUser):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+class Rider(models.Model):
+    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE, primary_key=True)
     is_rider = models.BooleanField(default=False)
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
