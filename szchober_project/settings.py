@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['szchober.pythonanywhere.com', '127.0.0.1']
 
-
+AUTH_USER_MODEL = 'szchober.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
