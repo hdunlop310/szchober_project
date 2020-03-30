@@ -10,7 +10,7 @@ from szchober.models import Driver, Rider, Lift, Rating, Feedback
 
 
 def populate():
-    drivers = [{'is_driver': True,
+    drivers = [{
                 'forename': 'Jerri',
                 'surname': 'Springer',
                 'password': 'JerriSzchober10',
@@ -24,7 +24,7 @@ def populate():
                 'car_registration': 'SD10 SYU',
                 'availability': True}]
 
-    riders = [{'is_rider': True,
+    riders = [{
                'forename': 'Johnny',
                'surname': 'Dunkin',
                'password': 'DunkSzchober10',
@@ -36,7 +36,7 @@ def populate():
                'postcode': 'G207SB',
                'rider_id': 'r434641346'},
 
-              {'is_rider': True,
+              {
                'forename': 'Romi',
                'surname': 'Schzil',
                'password': 'RSchnizzle34',
@@ -74,12 +74,12 @@ def populate():
     ]
 
     for driver in drivers:
-        d = add_driver(driver['is_driver'], driver['forename'], driver['surname'], driver['password'], driver['email'],
+        d = add_driver(driver['forename'], driver['surname'], driver['password'], driver['email'],
                        driver['phone_number'], driver['rating'], driver['review'], driver['driver_id'],
                        driver['car_make'], driver['car_model'], driver['car_registration'], driver['availability'])
 
     for rider in riders:
-        r = add_rider(rider['is_rider'], rider['forename'], rider['surname'], rider['password'], rider['email'],
+        r = add_rider(rider['forename'], rider['surname'], rider['password'], rider['email'],
                       rider['phone_number'], rider['rating'], rider['review'], rider['address'],
                       rider['postcode'], rider['rider_id'])
 
@@ -93,9 +93,9 @@ def populate():
         ra = add_rating(rat['rating_id'], rat['description'], rat['rating'])
 
 
-def add_driver(is_driver, forename, surname, password, email, phone_number, rating, review, driver_id,
+def add_driver(forename, surname, password, email, phone_number, rating, review, driver_id,
                car_make, car_model, car_registration, availability):
-    d = Driver.objects.get_or_create(is_driver=is_driver, forename=forename, surname=surname, password=password,
+    d = Driver.objects.get_or_create(forename=forename, surname=surname, password=password,
                                      email=email,
                                      phone_number=phone_number,
                                      rating=rating, review=review, driver_id=driver_id, car_make=car_make,
@@ -105,9 +105,9 @@ def add_driver(is_driver, forename, surname, password, email, phone_number, rati
     return d
 
 
-def add_rider(is_rider, forename, surname, password, email, phone_number, rating, review, address, postcode, rider_id):
+def add_rider(forename, surname, password, email, phone_number, rating, review, address, postcode, rider_id):
     r = \
-        Rider.objects.get_or_create(is_rider=is_rider, forename=forename, surname=surname, password=password,
+        Rider.objects.get_or_create(forename=forename, surname=surname, password=password,
                                     email=email,
                                     phone_number=phone_number,
                                     rating=rating, review=review, address=address, postcode=postcode,

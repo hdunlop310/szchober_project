@@ -1,18 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser
-import uuid
+from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 
 
 # Create your models here.
-
-class MyUUIDModel(models.Model):
-    id = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        editable=False
-    )
-
 
 class CustomUser(AbstractUser):
     type_choices = (
@@ -27,12 +18,11 @@ class CustomUser(AbstractUser):
 
 class UserDetails(models.Model):
     type = models.OneToOneField('CustomUser', on_delete=models.CASCADE)
-    extra_info = models.CharField(max_length=200)
 
 
-class Driver(models.Model):
-    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE)
-    is_driver = models.BooleanField(default=False)
+class Driver(AbstractBaseUser):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,blank=True,null=True)
+    #username = models.CharField(max_length=20, default='')
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
     password = models.CharField(max_length=20, default='')
@@ -40,19 +30,22 @@ class Driver(models.Model):
     phone_number = models.CharField(max_length=11, default='')
     rating = models.IntegerField(default=5)
     review = models.CharField(max_length=128, default='')
-    driver_id = models.UUIDField()
+    driver_id = models.CharField(max_length=10, unique=True, default='')
     car_make = models.CharField(max_length=10, default='')
     car_model = models.CharField(max_length=10, default='')
     car_registration = models.CharField(max_length=8, unique=True, default='')
     availability = models.BooleanField(default=False)
+    is_driver = models.BooleanField(default=True)
+
+    USERNAME_FIELD = 'driver_id'
 
     def __str__(self):
         return self.driver_id
 
 
-class Rider(models.Model):
-    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE, primary_key=True)
-    is_rider = models.BooleanField(default=False)
+class Rider(AbstractBaseUser):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,blank=True,null=True)
+    #username = models.CharField(max_length=20, default='')
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
     password = models.CharField(max_length=20, default='')
@@ -63,6 +56,9 @@ class Rider(models.Model):
     address = models.CharField(max_length=128, default='')
     postcode = models.CharField(max_length=7, default='')
     rider_id = models.CharField(max_length=10, unique=True, default='')
+    is_rider = models.BooleanField(default=True)
+
+    USERNAME_FIELD = 'rider_id'
 
     def __str__(self):
         return self.rider_id
@@ -105,12 +101,8 @@ class User(models.Model):
 
 
 class UserProfile(models.Model):
-    # This line is required. Links UserProfile to a User model instance. user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # # The additional attributes we wish to include.
-    # website = models.URLField(blank=True)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     picture = models.ImageField(upload_to='profile_images', blank=True)
-    is_rider = models.BooleanField(default=False)
-    is_driver = models.BooleanField(default=True)
 
     def __str__(self):
         return "User"
