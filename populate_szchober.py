@@ -1,4 +1,4 @@
-import os
+import os 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                       'szchober_project.settings')
@@ -6,7 +6,7 @@ from random import randint
 import django
 
 django.setup()
-from szchober.models import Driver, Rider, Lift, Rating, Feedback
+from szchober.models import User, Lift, Rating, Feedback
 
 
 def populate():
@@ -57,20 +57,15 @@ def populate():
          'price': 3.12}
     ]
 
-    feedback = [
-        {'feedback_id': 'f523985729',
-         'description': 'This app is very good'},
-
-        {'feedback_id': 'f213124123',
-         'description': 'This app is good'},
-
-        {'feedback_id': 'f789464456',
-         'description': 'This app barely alright'}
-    ]
+    feedback =[
+            {'feedback id' : 'f523985729','description': 'This app is very good'},
+            {'feedback id' : 'f213124123','description': 'This app is good'},
+            {'feedback id' : 'f213124123','description': 'This app barely alright'}
+                ]
     rating = [
-        {'rating_id': 'ra13733874',
-         'description': 'very good',
-         'rating': 5}
+        {'rating id' : 'ra13733874',
+        'description': 'very good',
+        'rating': 5}
     ]
 
     for driver in drivers:
@@ -104,6 +99,8 @@ def add_driver(forename, surname, password, email, phone_number, rating, review,
     d.save()
     return d
 
+    for us, user_data in users.items():
+        u = add_user(us, user_data[''])
 
 def add_rider(forename, surname, password, email, phone_number, rating, review, address, postcode, rider_id):
     r = \
@@ -135,5 +132,7 @@ def add_rating(rating_id, description, rating):
 
 
 if __name__ == '__main__':
-    print('Starting Szchober population script...')
+    print('Starting Rango population script...')
     populate()
+
+
