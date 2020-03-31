@@ -17,7 +17,7 @@ def index(request):
 
 
 def sign_up(request):
-    return HttpResponse("sign up page - become a driver/rider")
+    return render(request, 'szchober/sign-up.html')
 
 
 def become_rider(request):
