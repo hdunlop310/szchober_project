@@ -1,6 +1,18 @@
 from django.test import TestCase
 from szchober.models import Driver, Rider, Lift, Feedback, Rating
 
+'''
+----------------------------------------------------------------------------------------------------------------
+ test_models.py file -
+This program tests the database's labels. It checks that the given field maps to
+the correct label. ie forename = forename
+
+These tests are carried out on each field for the Driver, Rider, Lift, Feedback and Rating models.
+
+The web app passes all 31 tests.
+
+----------------------------------------------------------------------------------------------------------------
+'''
 
 # Create your tests here.
 
