@@ -14,3 +14,354 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif
     ;
 }
+
+.boxed {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    justify-items: center;
+
+}
+
+.boxed > div{
+    background: #fff;    
+
+}
+.boxed > div:nth-child(odd){
+    background: #fff;    
+
+}
+
+
+h3{
+    background-color: #fff;
+    font-weight: 500;
+    color: rgb(44, 131, 83);
+}
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(230, 230, 230);
+}
+
+/* ------------------FROM style.css-------------------*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    ;
+}
+
+a, button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+/*#navbar li{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}*/
+.navbar-left{
+    padding: 0 0 0 20px;
+    float: left;
+    list-style: none;
+    display: inline-flex;
+}
+
+.navbar-right{
+    margin-right: 20px;
+    float: right;
+    list-style: none;
+    display: inline-flex;
+
+}
+
+.login{
+    padding-right: 20px;
+    list-style-image: url("../../static/images/log\ in.png");
+}
+
+.signup{
+    padding-right: 20px;
+    border: 1px #64A874 solid;
+
+}
+
+span {
+    color: #64A874;
+}
+
+.boxedhome{
+    border: 2px rgb(44, 131, 83) solid ;
+    background-color:#64A874 ;
+    margin-top: 5%;
+    margin-bottom: 20%;
+    min-height: 450px;
+}   
+
+.boxedhome img{
+    height: 200px;
+    clear: both;
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+
+}
+
+.liftcase{
+    margin-top: 15%;
+    display: flex;
+    background: #64A874;
+    text-align: left;
+    max-height: 250px;
+}
+
+.lifttext{
+    background: #64A874;
+    color: white;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+}
+
+.liftimg{
+    background: #64A874;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  ;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", sans-serif;
+}
+
+a, button{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #2d2d2d;
+  text-decoration: none;
+}
+
+li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  z-index: 4;
+  padding-left: 20px;
+  color: #2d2d2d;
+  text-decoration: none;
+}
+
+.navbar{
+  border-top: 10px rgb(100, 100, 100) solid ;
+}
+.navbar-left{
+  padding: 0 0 0 20px;
+  float: left;
+  list-style: none;
+  display: inline-flex;
+}
+
+.navbar-right{
+  padding-right: 20px;
+  float: right;
+  list-style: none;
+  display: inline-flex;
+
+}
+
+span {
+  color: #64A874;
+}
+
+.boxedhome{
+    border: 3px rgb(87, 148, 101) solid ;
+    background-color:#64A874 ;
+    max-height: 400px;
+    margin-bottom: 20%;
+    min-height: 300px;
+}
+
+a:link {
+    color: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: none;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: none;
+  }
+  
+  /* selected link */
+  a:active {
+    color: none;
+  }
+
+.container {
+    margin: 0 auto;
+    
+}
+
+.header {
+    overflow: hidden;
+    padding-right: 360px;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    max-width: 1200px;
+    margin-left: 50px;
+    margin-right:35px;
+    max-height: 75px;
+
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    color: rgb(100,168,116);;
+    text-align: center;
+  }
+
+.body {
+    background-color: rgb(100,168,116);
+    max-width: 1200px;
+    margin-left: 50px;
+    margin-right: 50px;
+    min-height: auto;
+    max-height: auto;
+  }
+
+.lift{
+    text-align: center;
+    color: white;
+}
+
+.block{
+    display: inline-block;
+    text-align: left;
+	height: 180px;  
+    width: 400px; 
+}
+
+.p{
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.user{
+    display: inline-block;
+    padding-right: 15px;
+    text-align: right;
+}
+
+#map {
+    height: 400px;  
+    width: 400px;  
+    align-self: right;
+    text-align: right;
+    position: fixed;
+   }
+
+ .mapcontainer{
+     align-content: right;
+ }
+
+ #car{
+	width: 700px;
+	height: 700px;
+	position: relative;
+	z-index:0;
+	background-color:red;
+	top: -170px;
+	left: -50px;
+	background: url("/static/images/car.png");
+	background-size: 100% auto;
+}
+
+.gradient-button {
+	position:absolute;
+	z-index:1;
+    margin: 10px;
+    font-family: "Helvetica", sans-serif;
+    font-size: 36px;
+    padding: 40px;
+	transition:1s;
+    text-align: left;
+    background-size: 180% auto;
+    color: white;
+    width: 150px;
+    cursor: pointer;
+    display: inline-block;
+	border-right: 2px solid white;
+	box-shadow: 3px 0px rgba(0,0,0,0.08);
+	background-color: rgb(100,168,116);
+}
+.gradient-button:hover{
+	background-image: linear-gradient(to right, rgba(129,185,142,0), rgba(129,185,142,1));
+}
+.gradient-button:active{
+	background-image: linear-gradient(to right, rgba(255,217,102,0), rgba(255,217,102,1));
+}
+
+
+.oneperline{
+    width: 98%;
+    padding: 5px;
+    margin: 4px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.twoperline{
+    width: 98%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.twoperline input{
+    width: 98%;
+    padding: 5px;
+    margin: 4px 3px;
+
+}
+
+.submitbutton{
+    padding: 10px 20px;
+    background-color: rgb(100,168,116);
+}
