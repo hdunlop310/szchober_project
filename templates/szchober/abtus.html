@@ -32,44 +32,15 @@
                     <div>
                         <h3 style="display: inline">What is a Rider?</h3>
                     </div>
-                    <div id="driver">
-                        <input type="image" onclick="loadDocDriver()" src="../../static/images/carinfo.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" >
+                    <div>
+                        <a href="{% url 'szchober:become-a-driver' %}"><img src="../../static/images/carf.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" ></a>
                         <br>
                     </div>
-                    <div id="rider">
-                        <input type="image" onclick="loadDocRider()" src="../../static/images/riderinfo.png" alt="car" style="width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;"></a>
+                    <div>
+                        <a href= "{% url 'szchober:become-a-rider' %}"><img src="../../static/images/seatblack.png" alt="car" style="width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;"></a>
 
                     </div>
         </section>
-
-        <script>
-        function loadDocDriver() {
-          var xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("driver").innerHTML =
-              this.responseText;
-            }
-          };
-          xhttp.open("GET", "{% static "info/driver_info.txt" %}", true);
-          xhttp.send();
-        }
-        </script>
-
-        <script>
-        function loadDocRider() {
-          var xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("rider").innerHTML =
-              this.responseText;
-            }
-          };
-          xhttp.open("GET", "{% static "info/rider_info.txt" %}", true);
-          xhttp.send();
-        }
-        </script>
-
 
     </section>
     <footer>
