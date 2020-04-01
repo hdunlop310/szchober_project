@@ -44,65 +44,27 @@
                     <div style="border: 2px  rgb(44, 131, 83) solid; width: 300px; height: 300px; padding-top: 4%; ">
                         
 
-                        <!-- Input database file here -->
-                        <form action="process.php" method="POST">
-                            <div>
-                                <div class="twoperline">
-                                    <input type="text" name="forename" placeholder="Forename"  >
-                                    <input type="text" name="surname" placeholder="Surname" >
-                                </div>
-                                <input class="oneperline" type="email" name="email" placeholder="Email">
-                                <input class="oneperline" type="password" name="password" placeholder="Password">
-                                <input class="oneperline" type="tel" name="phone" placeholder="Phone Number">
-                                <div class="twoperline">
-                                    <input type="text" name="carmake" placeholder="Car Make"> 
-                                    <input type="text" name="carmodel" placeholder="Car Model" >
-                                </div>
-                                <input class="oneperline" type="text" name="regplate" placeholder="Registration Plate">
-                                <input class="submitbutton" type="submit" name="submit" value="Submit">
-
-
-
-
-
-                            </div>
+                        {% if registered %}
+                       <strong>thank you for registering!</strong>
+                        <a href="{%url 'szchober:index'%}">Return to the homepage.</a><br/>
+                        {% else %}
+                        <strong>register here!</strong><br/>
+                        
+                        <form id="user_form" method="post" action="{% url 'szchober:become-a-driver' %}"
+                            enctype="multipart/form-data">
+                        
+                            {% csrf_token %}
+                        
+                            {{ user_form.as_p }}
+                            {{ profile_form.as_p }}
+                        
+                            <input type="submit" name="submit" value="Register" />
                         </form>
+                        {% endif %}
 
                     </div>
                 </div>
     </section>     
-
-
-
-
-<!--
-{% load staticfiles %}
-
-{% block title_block %}
-{% endblock %}
-
-{% block body_block %}
-<h1>Become a Driver</h1>
-{% if registered %}
-Rango says:<strong>thank you for registering!</strong>
-<a href="{%url 'szchober:index'%}">Return to the homepage.</a><br/>
-{% else %}
-<strong>register here!</strong><br/>
-
-<form id="user_form" method="post" action="{% url 'szchober:become-a-driver' %}"
-    enctype="multipart/form-data">
-
-    {% csrf_token %}
-
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
-
-    <input type="submit" name="submit" value="Register" />
-</form>
-{% endif %}
-{% endblock %}
--->
-        
     </section>
     <footer>
         <br>
