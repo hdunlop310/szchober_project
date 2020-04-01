@@ -3,7 +3,8 @@
 <html>
     <head>
         <title>Szch&#246ber.</title>
-        <link rel="stylesheet" type="text/css" href="{% static "styles/templatestyles.css" %}" >
+        <!-- <link rel="stylesheet" type="text/css" href="{% static "styles/templatestyles.css" %}" > -->
+        <link rel="stylesheet" type="text/css" href="../../static/styles/templatestyles.css">
     </head>
     <body>
         <header id="main-header">
@@ -19,7 +20,7 @@
                     <li ><a href="{% url 'szchober:about-us' %}" style="color: rgb(44, 131, 83)">About us</a></li>
                 </ul>
                 <ul class="navbar-right">
-                    <li class="login"><a href="#">Log in</a></li>
+                    <li class="login"><a href="#" id="modalbutton">Log in</a></li>
                     <li class="signup"><a href="#" style="color: rgb(44, 131, 83);">Sign up</a></li>
                 </ul>
             </nav>
@@ -91,5 +92,41 @@
             </ul>
         </nav>
     </footer>
+
+    
+    <div id="loginmodal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Log in</h3>
+            <form action="process.php" method="POST">
+                <input class="oneperline" placeholder="Email" type="text" name="loginemail">
+                <input class="oneperline" placeholder="Password" type="text" name="loginpassword">
+                <input class="submitbutton" type="submit" name="loginbutton" value="Sign me in" style="float: right;">
+                
+                
+            </form>
+
+        </div>
+      
+    </div>
+      
+    <script>
+        var modal = document.getElementById("loginmodal");
+        var btn = document.getElementById("modalbutton");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     </body>
 </html>

@@ -405,3 +405,56 @@ a:link {
     border: 2px solid gray;
 
 }
+
+.loginmodal{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+}
+
+
+.modal {
+    width: 100%; 
+    height: 80%; 
+    display: none; 
+    float: right;
+    position: absolute; 
+    background-color: rgba(255, 255, 255, 0.7);
+    /* z-index: 1; 
+    padding-top: 100px;  */
+    /* left: 0; */
+    top: 100px;
+    align-items: center;
+    overflow: auto; /* Enable scroll if needed */
+  }
+  
+  /* Modal Content */
+.modal-content {
+    background-color: white;
+    border: 2px solid #64A874;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    height: 200px;
+    opacity: 1;
+  }
+  
+  /* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
