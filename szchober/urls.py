@@ -1,6 +1,24 @@
 from django.urls import path
 from szchober import views
 
+'''
+----------------------------------------------------------------------------------------------------------------
+ urls.py file - registers the web apps urls. maps urls for:
+    - index
+    - sign up
+    - become a rider 
+    - become a driver
+    - find a lift
+    - account, driver
+    - account, rider
+    - about us
+    - login
+    - logout
+    - feedback
+    
+----------------------------------------------------------------------------------------------------------------
+'''
+
 app_name = 'szchober'
 
 urlpatterns = [

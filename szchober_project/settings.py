@@ -25,9 +25,9 @@ SECRET_KEY = 'h*v-uv_g5i@#f2azt2vw-+fgcs$=p(h=e(+n5a39+cnt3%w3g%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['szchober.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['szchober.pythonanywhere.com', '127.0.0.1'] #allows web app to run locally and on pythonanywhere
 
-AUTH_USER_MODEL = 'szchober.CustomUser'
+AUTH_USER_MODEL = 'szchober.CustomUser' #allows custom user to work
 # Application definition
 
 INSTALLED_APPS = [

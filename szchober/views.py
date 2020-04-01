@@ -11,6 +11,22 @@ from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
+'''
+----------------------------------------------------------------------------------------------------------------
+ views.py file - registers the web apps views for the urls. creates views for:
+    - index
+    - sign up
+    - become a rider 
+    - become a driver
+    - find a lift
+    - account, driver
+    - account, rider
+    - about us
+    - login
+    - logout
+    - feedback
+----------------------------------------------------------------------------------------------------------------
+'''
 
 def index(request):
     return render(request, 'szchober/index.html')
@@ -94,7 +110,7 @@ def myAccount_driver(request):
     return HttpResponse("this is my driver account")
 
 
-# @login_required
+
 def find_lift(request):
     return render(request, 'szchober/find-a-lift.html')
 

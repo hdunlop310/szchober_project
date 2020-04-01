@@ -1,8 +1,28 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser, AbstractBaseUser
+'''
+----------------------------------------------------------------------------------------------------------------
+ models.py file - Szchober database
+There are multiple models in this database
+I have created a CustomUser model that allows for a cusomised version of the provided User model from Django
+- CustomUser, User and UserProfile all relate to the user creating their own user account
+- The Driver and Rider models are the two user models. There are two user models as different user 
+    information is needed depending on the user type. If a user is a "Driver" then their address and postcode
+    is not needed. Instead, they must provide their car make and model and their registration number.
+    However, if a user is a Rider, they should not have to provide vehicle information. Instead they need 
+    to provide their address and postcode so that a driver can collect them.
+    
+- The Lift model stores the data relating to the data that is needed when a rider chooses such as the start destination,
+    end destination, total distance and price
+    
+- The Feedback model is to do with the user's feedback on Szchober - their comment and rating is stored so 
+    that it is easily read.
+    
+- The Rating Model is stores a user's rating on another user.  
 
-
+----------------------------------------------------------------------------------------------------------------
+'''
 # Create your models here.
 
 class CustomUser(AbstractUser):

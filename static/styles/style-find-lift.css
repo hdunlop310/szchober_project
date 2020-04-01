@@ -8,8 +8,14 @@ html, body{
 
 .container {
     margin: 0 auto;
+	color: rgb(118,113,113);/*grey*/
     
 }
+
+span{
+	color: rgb(100,168,116);	
+}
+
 
 #floating-panel {
   position: absolute;

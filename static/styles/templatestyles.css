@@ -1,3 +1,20 @@
+.displaydriver{
+    border: black 1px solid;
+    max-width: 40%;
+    display: inline;
+
+}
+.displayrider{
+    border: black 1px solid;
+    max-width: 40%;
+    display: inline;
+}
+
+.displayrdriver h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+    ;
+}
+
 .boxed {
     display: grid;
     grid-template-columns: 50% 50%;
