@@ -102,8 +102,8 @@ span{
 }
 
 #map {
-    height: 400px;  
-    width: 400px;  
+    height: 500px;  
+    width: auto;  
     align-self: right;
     text-align: right;
     position: fixed;
