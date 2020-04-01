@@ -458,3 +458,13 @@ a:link {
     text-decoration: none;
     cursor: pointer;
   }
+
+.feedbackbox{
+    min-height: 300px;
+}
+
+.feedbackbox > img{
+    height: 100px;
+    width: auto;
+    text-align: center;
+}
