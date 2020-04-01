@@ -25,7 +25,7 @@ Rango says:<strong>thank you for registering!</strong>
 <html>
     <head>
         <title>Szch&#246ber.</title>
-        <link rel="stylesheet" href="../../static/styles/templatestyles.css">
+        <link rel="stylesheet" href="{% static "styles/templatestyles.css" %}" />
 <!------------------------------------------------->
     </head>
     <body>
@@ -60,7 +60,7 @@ Rango says:<strong>thank you for registering!</strong>
 
                 <div>
                     <div style="border: 2px  rgb(44, 131, 83) solid; width: 300px; height: 300px; padding-top: 4%; ">
-                        <img src="../../static/images/avatar.png">
+                        
 
                         <!-- Input database file here -->
                         <form id="user_form" method="post" action="{% url 'szchober:become-a-rider' %}"
