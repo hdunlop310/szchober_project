@@ -1,12 +1,175 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
     <head>
-        <title>my account - rider</title>
+        <title>Szch&#246ber.</title>
+        <!--<link rel="stylesheet" href="{% static "styles/templatestyles.css" %}" /> -->
+        <link rel="stylesheet" href="../../static/styles/templatestyles.css">
     </head>
     <body>
-        <h1>my account</h1>
-        <ul>
-            <li>user details...</li>
-        </ul>
+        <header id="main-header">
+            <div class="main-header">
+                <a href="#"><h1>Szch<span>&#246</span>ber.</h1></a>
+
+            </div>
+        </header>
+            <nav id="navbar">
+                <ul class="navbar-left">
+                    <li><a href="#">Driver</a></li>
+                    <li><a href="#">Rider</a></li>
+                    <li ><a href="#" style="color: rgb(44, 131, 83)">About us</a></li>
+                </ul>
+                <ul class="navbar-right">
+                    <li class="login"><a href="#">Log in</a></li>
+                    <li class="signup"><a href="#" style="color: rgb(44, 131, 83);">Sign up</a></li>
+                </ul>
+            </nav>
+            <h1 style="font-size: 18pt; visibility: hidden;">You can't see me</h1>
+            <br>
+
+            <section class="boxed" >
+                <div>
+                    <h3 style="display: inline;">My Rider Profile</h3>
+                </div>
+                <div>
+                    <h3 style="display: inline;">Details</h3>
+                </div>
+                <div style="border: 2px  rgb(44, 131, 83) solid; width: 300px; height: 300px; padding-top: 2%; ">
+                    <br>
+                    <!-- Replace with user photo  -->
+                    <img src="../../static/images/avatar.png" style="width: 125px; border-radius: 50%;">
+                    <div class="ratingsection">
+                        <h1>Rate Your Drivers</h1>
+                            <br>
+                            <div class="ratings">
+                                <div style="margin-right: 5%;">
+                                    <!-- Replace with database -->
+                                    <h3 style="font-size: medium;">Driver 1</h3>
+                                    <br>
+                                    <div style="display: grid; grid-template-columns: 70% 30%;">
+                                        <h3 style="font-size: small;">Rating:</h3>
+                                        <!-- Replace with database -->
+                                        <h3 style="font-size: small; font-weight: 200%; ">4.5 </h3>
+
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                                <div style="margin-right: 5%;">
+                                    <!-- Replace with database -->
+                                    <h3 style="font-size: medium;">Driver 2</h3>
+                                    <br>
+                                    <div style="display: grid; grid-template-columns: 70% 30%;">
+                                        <h3 style="font-size: small;">Rating:</h3>
+                                        <!-- Replace with database -->
+                                        <h3 style="font-size: small; font-weight: 200%; ">4.5 </h3>
+
+                                    </div>
+                                    <br>
+                                    <br>                                </div>    
+                                <div>
+                                    <!-- Replace with database -->
+                                    <h3 style="font-size: medium;">Driver 3</h3>
+                                    <br>
+                                    <div style="display: grid; grid-template-columns: 70% 30%;">
+                                        <h3 style="font-size: small;">Rating:</h3>
+                                        <!-- Replace with database -->
+                                        <h3 style="font-size: small; font-weight: 200%; ">4.5 </h3>
+
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+                <div>
+                    <div style="border: 2px  rgb(44, 131, 83) solid; width: 300px; height: 300px; padding-top: 4%; ">
+                        
+                        <div style="display: grid; grid-template-columns: 60% 40%;">
+                        <!-- Input database file here -->
+                        <form action="process.php" method="GET">
+                            <div class="oneperlinetext">
+                                <h1> Sample User </h1> 
+                                <br>
+                                <h1> sample.user@gmail.com </h1>
+                                <br>
+                                <h1> +44 74 1234 1234 </h1>
+                                <br>
+                                <h1> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+
+                                </h1>
+                                <br>
+                                <h1> G12 8QQ </h1>
+
+                            </div>
+                        </form>
+                            <form action="process.php" method="GET">
+                            <div>
+                                    <p style="padding-top: 90%;" >
+                                        My Rating: 
+                                    </p>
+                                    <h1 style="color: #64A874;">
+                                        4.5
+                                    </h1>
+                            
+                            </div>
+                        </form>
+                        </div>
+                </div>
+    </section>     
+
+
+
+
+<!--
+{% load staticfiles %}
+
+{% block title_block %}
+{% endblock %}
+
+{% block body_block %}
+<h1>Become a Driver</h1>
+{% if registered %}
+Rango says:<strong>thank you for registering!</strong>
+<a href="{%url 'szchober:index'%}">Return to the homepage.</a><br/>
+{% else %}
+<strong>register here!</strong><br/>
+
+<form id="user_form" method="post" action="{% url 'szchober:become-a-driver' %}"
+    enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+
+    <input type="submit" name="submit" value="Register" />
+</form>
+{% endif %}
+{% endblock %}
+-->
+        
+    </section>
+    <footer>
+        <br>
+        <nav id="navbar">
+            <ul class="navbar-left">
+                <li><a href="#"><img src="../../static/images/420px-Globe_icon.svg.png" alt=""></a></li>
+                <li><a href="#">
+                    <div>
+                        <h3 style="color: black;">Contact us</h3>
+                        <h1 style="color: rgb(44, 131, 83); font-size: 10px; padding-top: 5px ;">+44 749 4671 324</h1>
+                        <a href="{% url 'szchober:feedback' %}"><h1 style="color: rgb(44, 131, 83); font-size: 10px; padding-top: 5px ;">Feedback</h1></a>
+                    </div>
+                </a></li>
+            </ul>
+            <ul class="navbar-right">
+                <li><a href="http://hyperurl.co/pt4i93"><img src="../../static/images/download-on-app-store-png-2.png" alt=""></a></li>
+                <li><a href="#"><img src="../../static/images/socials.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </footer>
     </body>
 </html>
