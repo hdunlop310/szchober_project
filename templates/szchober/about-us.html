@@ -20,8 +20,12 @@
                     <li ><a href="{% url 'szchober:about-us' %}" style="color: rgb(44, 131, 83)">About us</a></li>
                 </ul>
                 <ul class="navbar-right">
+                    {% if registered %}
+                    <li class="login"><a href="#">My Account</a></li>
+                    {% else %}
                     <li class="login"><a href="#" id="modalbutton">Log in</a></li>
                     <li class="signup"><a href="#" style="color: rgb(44, 131, 83);">Sign up</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         <h1 style="font-size: 18pt; visibility: hidden;">You can't see me</h1>

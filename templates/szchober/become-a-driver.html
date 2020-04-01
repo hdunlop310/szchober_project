@@ -11,19 +11,23 @@
     <body>
         <header id="main-header">
             <div class="main-header">
-                <a href="#"><h1>Szch<span>&#246</span>ber.</h1></a>
+                <a href="{% url 'szchober:index' %}"><h1>Szch<span>&#246</span>ber.</h1></a>
 
             </div>
         </header>
             <nav id="navbar">
                 <ul class="navbar-left">
-                    <li><a href="#">Driver</a></li>
-                    <li><a href="#">Rider</a></li>
-                    <li ><a href="#" style="color: rgb(44, 131, 83)">About us</a></li>
+                    <li><a href="{% url 'szchober:become-a-driver' %}">Driver</a></li>
+                    <li><a href="{% url 'szchober:become-a-rider' %}">Rider</a></li>
+                    <li ><a href="{% url 'szchober:about-us' %}" style="color: rgb(44, 131, 83)">About us</a></li>
                 </ul>
                 <ul class="navbar-right">
+                    {% if registered %}
+                    <li class="login"><a href="#">My Account</a></li>
+                    {% else %}
                     <li class="login"><a href="#" id="modalbutton">Log in</a></li>
                     <li class="signup"><a href="#" style="color: rgb(44, 131, 83);">Sign up</a></li>
+                    {% endif %}
                 </ul>
             </nav>
             <h1 style="font-size: 18pt; visibility: hidden;">You can't see me</h1>
@@ -37,7 +41,7 @@
                     <h3 style="display: inline;">Register</h3>
                 </div>
                 <div>
-                    <a href="{% url 'szchober:become-a-rider' %}"><img src="../../static/images/carf.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" ></a>
+                    <img src="../../static/images/carf.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" >
                     <br>
                 </div>
                 <div>
@@ -48,7 +52,6 @@
                        <strong>thank you for registering!</strong>
                         <a href="{%url 'szchober:index'%}">Return to the homepage.</a><br/>
                         {% else %}
-                        <strong>register here!</strong><br/>
                         
                         <form id="user_form" method="post" action="{% url 'szchober:become-a-driver' %}"
                             enctype="multipart/form-data">
@@ -92,9 +95,10 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Log in</h3>
-            <form action="process.php" method="POST">
-                <input class="oneperline" placeholder="Email" type="text" name="loginemail">
-                <input class="oneperline" placeholder="Password" type="text" name="loginpassword">
+            <form id="login_form" method="post" action="{% url 'szchober:login' %}">
+                {% csrf_token %}
+                <input class="oneperline" type="text" name="username" value="" placeholder="Email" size="15" /> <br />
+                <input class="oneperline" type="password" name="password" value="" placeholder="Password" size="20" /> <br />
                 <input class="submitbutton" type="submit" name="loginbutton" value="Sign me in" style="float: right;">
                 
                 
