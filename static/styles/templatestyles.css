@@ -506,12 +506,12 @@ a:link {
 	width: 700px;
 	height: 700px;
 	position: relative;
-	left: 150px;
+	left: 125px;
 	z-index:0;
 	background: url("/static/images/car.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100% 225%;
+	background-size: 25% 25%;
 }
 
 .gradient-button {

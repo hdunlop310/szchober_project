@@ -17,10 +17,10 @@
 					<script>
 						function mouseOver(){
 						var elem = document.getElementById("car");
-						var pos = 150;
+						var pos = 125;
 						var id = setInterval(frame, 5);
 							function frame(){
-								if (pos == 180){
+								if (pos == 155){
 									clearInterval(id)
 								}else{
 									pos++;
@@ -31,10 +31,10 @@
 
 						function mouseOut(){
 							var elem = document.getElementById("car");
-							var pos = 180;
+							var pos = 155;
 							var id = setInterval(frame, 5);
 							function frame(){
-								if (pos == 150){
+								if (pos == 125){
 									clearInterval(id)
 								}else{
 									pos--;
@@ -45,10 +45,10 @@
 
 						function mouseClick(){
 							var elem = document.getElementById("car");
-							var pos = 180;
+							var pos = 155;
 							var id = setInterval(frame, 5);
 							function frame(){
-								if (pos == 220){
+								if (pos == 195){
 									clearInterval(id)
 									window.open("{% url 'szchober:find_a_lift' %}","_self");
 								}else{
