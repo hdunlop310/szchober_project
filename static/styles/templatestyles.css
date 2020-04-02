@@ -449,9 +449,8 @@ a:link {
 	height: 700px;
 	position: relative;
 	z-index:0;
-	background-color:red;
-	top: -170px;
-	left: -50px;
+	top: -140px;
+	left: -120px;
 	background: url("/static/images/car.png");
 	background-size: 100% auto;
 }
