@@ -37,7 +37,7 @@
         });
 
         infoWindow = new google.maps.InfoWindow;
-        
+
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -84,7 +84,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAyB5pYSYqOo5T0ih5jDjKJJpsNR_LVO8&callback=initMap">
     </script>
     </div>
-    
+
     <div class="container-supermarket-info">
         <h2>Find a lift.</h2>
         <form>
@@ -92,14 +92,14 @@
         </form>
         <button type="button" id="ConfirmLocation" style="background-color:lightgray;">Confirm Location</button>
     </div>
-  
+
     <div class="container-available-drivers" style="background-color:rgb(100,168,116);">
         <h3 style="background-color:rgb(100,168,116);">There are drivers available</h3>
         <button onclick="bookNowButton()" type="button" style="background-color:lightgray;" id="booknow">Book now</button>
 
         <script>
           function bookNowButton(){
-            alert("Your selected driver has been alerted and is on their way");
+            alert("Your driver has been alerted and is on their way");
           }
         </script>
     </div>
@@ -115,8 +115,8 @@
         <input class="oneperline" type="text" name="username" value="" placeholder="Email" size="15" /> <br />
         <input class="oneperline" type="password" name="password" value="" placeholder="Password" size="20" /> <br />
         <input class="submitbutton" type="submit" name="loginbutton" value="Sign me in" style="float: right;">
-          
-          
+
+
       </form>
 
   </div>
