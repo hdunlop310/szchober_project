@@ -99,15 +99,14 @@ class Lift(models.Model):
 
 
 class Feedback(models.Model):
-    # feedback_id = models.CharField(max_length=10, unique=True, default='')
     name = models.CharField(max_length=20, default='')
     description = models.TextField(max_length=500, default='')
 
     class Meta:
         verbose_name_plural = 'Feedback'
 
-    #def __str__(self):
-     #   return self.feedback_id
+    def __str__(self):
+        return self.name
 
 
 class Rating(models.Model):

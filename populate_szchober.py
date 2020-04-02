@@ -58,13 +58,13 @@ def populate():
     ]
 
     feedback = [
-        {'feedback_id': 'f523985729',
+        {'name': 'Laura',
          'description': 'This app is very good'},
 
-        {'feedback_id': 'f213124123',
+        {'name': 'Heather',
          'description': 'This app is good'},
 
-        {'feedback_id': 'f789464456',
+        {'name': 'Dave',
          'description': 'This app barely alright'}
     ]
     rating = [
@@ -87,7 +87,7 @@ def populate():
         l = add_lift(lift['lift_id'], lift['start'], lift['end'], lift['distance'], lift['price'])
 
     for fd in feedback:
-        f = add_feedback(fd['feedback_id'], fd['description'])
+        f = add_feedback(fd['name'], fd['description'])
 
     for rat in rating:
         ra = add_rating(rat['rating_id'], rat['description'], rat['rating'])
@@ -121,8 +121,8 @@ def add_lift(lift_id, start, end, distance, price):
     return l
 
 
-def add_feedback(feedback_id, description):
-    f = Feedback.objects.get_or_create(feedback_id=feedback_id, description=description)[0]
+def add_feedback(name, description):
+    f = Feedback.objects.get_or_create(name=name, description=description)[0]
     f.save()
     return f
 
