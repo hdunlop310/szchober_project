@@ -1,3 +1,36 @@
+/*feedback*/
+#feedbacksubmit{
+background-color: #008CBA;
+padding:0.5%;
+}
+#id_name,#id_description{
+font-family:arial;
+font-size:24px;
+display:flex;
+margin-left:40%;
+}
+
+.feedbackcentered label{
+position:absolute;
+display:flex;
+margin-left:25%;
+}
+.feedbackcentered{
+   padding-bottom:25px;
+   padding-left:25px;
+   padding-right:25px;
+   background-color:white;
+   box-shadow:10px 10px 5px grey;
+   text-align:center;
+   width: 100%;
+}
+
+.feedbackcentered form{
+padding-top:3%;
+text-align:center;
+}
+
+
 /*<!-- Footer -->*/
 .site-footer
 {
@@ -210,7 +243,6 @@ color:gray}
 
 
 h3{
-    background-color: #fff;
     font-weight: 500;
     color: rgb(44, 131, 83);
 }

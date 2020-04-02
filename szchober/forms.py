@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from szchober.models import UserProfile, Rider, Driver
+from szchober.models import UserProfile, Rider, Driver, Feedback
 from django import forms
 
 '''
@@ -13,6 +13,7 @@ from django import forms
 
 ----------------------------------------------------------------------------------------------------------------
 '''
+
 
 class UserFormDriver(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -35,3 +36,9 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('picture',)
+
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = ('name', 'description')

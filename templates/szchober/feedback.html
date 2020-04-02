@@ -5,30 +5,27 @@
    {% block title_block %}Feedback{% endblock %}
 
     {% block body_block %}
-
-        <section class="feedbackbox">
-           <div>
-             <div class="row" style="padding:100px;">
-             <div class="col-md-6 col-xs-12" style="justify-content:center;">
-             <h3 style="display: inline; text-align:center; background-color:lightgray;">Become a Driver</h3>
-             <div>
-                                 <img src="../../static/images/carf.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" >
-
-                             </div>
-             </div>
-             <div class="col-md-6 col-xs-12" >
-             <h3 style="display: inline; vertical-align:bottom; background-color:lightgray;">Please Provide Feedback on our Web App</h3><br/>
-             <textarea id="feedbackbox" rows="8" cols="60">
-           </textarea><br/>
-           <button onclick="submitButton()" type="button"  id="submit">Submit</button>
-
-           <script>
-             function submitButton(){
-               alert("Thank you for your feedback");
-             }
-           </script>
-
-        </section>
+        <h1 style="text-align:center;font-size:4em;margin-bottom:10%;">Szch<span>&#246</span>ber.</h1>
+        <div class="feedbackcentered">
+           <h1>Feedback to us</h1>
+            <div>
+               <form method="POST">
+                   {%csrf_token%}
+                   {{form.as_p}}
+                   <div class="form-actions">
+                       <button type="submit" id="feedbacksubmit">Send Feedback</button>
+                       {% if messages %}
+                         <ul class = 'messages'>
+                            {% for message in messages %}
+                            <li {% if message.tags %} class ="{{ message.tags }}"{% endif %}>{{message}}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                   </div>
+               </form>
+           </div>
+        
+        </div>
 
     </footer>
     <div id="loginmodal" class="modal">
@@ -36,19 +33,18 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Log in</h3>
-            <form id="login_form" method="post" action="{% url 'szchober:login' %}">
-                {% csrf_token %}
-                <input class="oneperline" type="text" name="username" value="" placeholder="Email" size="15" /> <br />
-                <input class="oneperline" type="password" name="password" value="" placeholder="Password" size="20" /> <br />
+            <form action="process.php" method="POST">
+                <input class="oneperline" placeholder="Email" type="text" name="loginemail">
+                <input class="oneperline" placeholder="Password" type="text" name="loginpassword">
                 <input class="submitbutton" type="submit" name="loginbutton" value="Sign me in" style="float: right;">
-
-
+                
+                
             </form>
 
         </div>
-
+      
     </div>
-
+      
     <script>
         var modal = document.getElementById("loginmodal");
         var btn = document.getElementById("modalbutton");

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser, AbstractBaseUser
+
 '''
 ----------------------------------------------------------------------------------------------------------------
  models.py file - Szchober database
@@ -23,6 +24,8 @@ I have created a CustomUser model that allows for a cusomised version of the pro
 
 ----------------------------------------------------------------------------------------------------------------
 '''
+
+
 # Create your models here.
 
 class CustomUser(AbstractUser):
@@ -41,8 +44,8 @@ class UserDetails(models.Model):
 
 
 class Driver(AbstractBaseUser):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,blank=True,null=True)
-    #username = models.CharField(max_length=20, default='')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, blank=True, null=True)
+    # username = models.CharField(max_length=20, default='')
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
     password = models.CharField(max_length=20, default='')
@@ -64,8 +67,8 @@ class Driver(AbstractBaseUser):
 
 
 class Rider(AbstractBaseUser):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,blank=True,null=True)
-    #username = models.CharField(max_length=20, default='')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, blank=True, null=True)
+    # username = models.CharField(max_length=20, default='')
     forename = models.CharField(max_length=16, default='')
     surname = models.CharField(max_length=16, default='')
     password = models.CharField(max_length=20, default='')
@@ -96,14 +99,15 @@ class Lift(models.Model):
 
 
 class Feedback(models.Model):
-    feedback_id = models.CharField(max_length=10, unique=True, default='')
-    description = models.CharField(max_length=500, default='')
+    # feedback_id = models.CharField(max_length=10, unique=True, default='')
+    name = models.CharField(max_length=20, default='')
+    description = models.TextField(max_length=500, default='')
 
     class Meta:
         verbose_name_plural = 'Feedback'
 
-    def __str__(self):
-        return self.feedback_id
+    #def __str__(self):
+     #   return self.feedback_id
 
 
 class Rating(models.Model):

@@ -1,8 +1,9 @@
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from szchober.models import UserProfile
-from szchober.forms import UserFormDriver, UserFormRider, UserProfileForm
+from szchober.forms import UserFormDriver, UserFormRider, UserProfileForm, FeedbackForm
 
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
@@ -27,6 +28,7 @@ from django.contrib.auth.decorators import login_required
     - feedback
 ----------------------------------------------------------------------------------------------------------------
 '''
+
 
 def index(request):
     return render(request, 'szchober/index.html')
@@ -110,7 +112,6 @@ def myAccount_driver(request):
     return HttpResponse("this is my driver account")
 
 
-
 def find_lift(request):
     return render(request, 'szchober/find-a-lift.html')
 
@@ -120,7 +121,16 @@ def about(request):
 
 
 def feedback(request):
-    return render(request, 'szchober/feedback.html')
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Feedback Submitted Sucessfully")
+    else:
+        form = FeedbackForm()
+
+    return render(request, 'szchober/feedback.html', {'form': form})
 
 
 def user_login(request):
