@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 {% extends 'szchober/base.html' %}
 {% load staticfiles %}
 <html>
@@ -9,7 +9,7 @@
     <div>
                     <h3 style="display: inline; background-color:lightgray;">Register</h3>
         <div>
-                    <div style="border: 2px  rgb(44, 131, 83) solid; width: 300px; height: auto; padding-top: 4%; justify-content:center;">
+                    <div style="border: 2px  rgb(44, 131, 83) solid; width: 300px; height: auto; padding-top: 4%; justify-content:center; background-color: rgb(44, 131, 83) ; color:white">
 
                         {% if registered %}
                        <strong>thank you for registering!</strong>
@@ -24,7 +24,7 @@
                             {{ user_form.as_p }}
                             {{ profile_form.as_p }}
 
-                            <input type="submit" name="submit" value="Register" />
+                            <input type="submit" name="submit"  style="background-color:lightgray; color:black" value="Register" />
                         </form>
                         {% endif %}
                     </div>
