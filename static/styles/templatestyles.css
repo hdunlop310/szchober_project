@@ -406,6 +406,7 @@ a:link {
     margin-right: 50px;
     min-height: auto;
     max-height: auto;
+    align-content: center;
   }
 
 .lift{
@@ -432,10 +433,10 @@ a:link {
 }
 
 #map {
-    height: 400px;  
-    width: 400px;  
+    height: 600px;  
+    width: 1200px;  
     align-self: right;
-    text-align: right;
+    text-align: center;
     position: fixed;
    }
 
@@ -480,6 +481,9 @@ a:link {
 	background-image: linear-gradient(to right, rgba(255,217,102,0), rgba(255,217,102,1));
 }
 
+.container-available-drivers{
+  background-color: rgba(129,185,142,1);
+}
 
 .oneperline{
     width: 98%;

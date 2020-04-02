@@ -1,3 +1,4 @@
-<h1>Rider</h1>
-<p>Riders are users who do not have a car and need a ride to their local supermarket and do not want to pay for a taxi or take public transport.</p>
-<p>Riders treat Szchober similarly as they would with a taxi service but Szchober is far cheaper! Riders can choose a location and their driver and then wait to be collected.</p>
+
+<h1 style="background-color: lightgrey">Rider</h1>
+<p style="background-color: lightgrey">Riders are users who do not have a car and need a ride to their local supermarket and do not want to pay for a taxi or take public transport.</p>
+<p style="background-color: lightgrey">Riders treat Szchober similarly as they would with a taxi service but Szchober is far cheaper! Riders can choose a location and their driver and then wait to be collected.</p>
