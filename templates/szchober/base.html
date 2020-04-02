@@ -19,13 +19,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-<header id="main-header"style="background-color:black;">
+<header id="main-header"style="background-color:white;">
             <div class="main-header">
                 <a href="{% url 'szchober:index' %}"><h1>Szch<span>&#246</span>ber.</h1></a>
 
             </div>
         </header>
-           <nav class="navbar navbar-inverse"style="background-color:black; margin-bottom:0px;">
+           <nav class="navbar navbar-inverse"style="background-color:white; margin-bottom:0px;">
 			    <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'szchober:become-a-driver' %}">Driver</a></li>
@@ -41,7 +41,7 @@
                     {% endif %}
                 </ul>
             </nav>
-    <div class="container-fluid" style="padding:100px;">
+    <div class="container-fluid" style="padding:100px; background-color: lightgray;">
     {% block body_block %}
     {% endblock %}
     </div>

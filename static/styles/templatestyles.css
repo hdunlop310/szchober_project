@@ -1,7 +1,7 @@
 /*<!-- Footer -->*/
 .site-footer
 {
-  background-color:#26272b;
+  background-color:white;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
@@ -9,7 +9,7 @@
 }
 .site-footer hr
 {
-  border-top-color:#bbb;
+  border-top-color:#gray;
   opacity:0.5
 }
 .site-footer hr.small
@@ -18,7 +18,7 @@
 }
 .site-footer h6
 {
-  color:#fff;
+  color:#gray;
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
@@ -166,13 +166,13 @@
 
 .main-header{
 justify-items:center;
-text-align:center;
-color:;
+text-align:left;
+color:gray;
 padding-top:10px;
 padding-bottom:10px;
 }
 .main-header h1{
-color:white}
+color:gray}
 .displaydriver{
     border: black 1px solid;
     max-width: 40%;
