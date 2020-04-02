@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-{% extends 'szchober/base.html' %}
+{% extends 'szchober/base_index.html' %}
 {% load staticfiles %}
 <html>
 
@@ -10,17 +10,17 @@
 
 
             <div class="liftcase" style="margin-left:-20px; margin-right:-20px;">
-				<div id="welcomebox"><h1>Szch<span>&#246</span>ber.</h1></div>
+				<div id="welcomebox" style="background:white;"><h1>Szch<span>&#246</span>ber.</h1></div>
                 <a class="gradient-button" onmouseover="mouseOver()" onmouseout="mouseOut ()" onmousedown="mouseClick ()">Find a Lift.</a>
                 <div id="car">
 
 					<script>
 						function mouseOver(){
 						var elem = document.getElementById("car");
-						var pos = -120;
+						var pos = 150;
 						var id = setInterval(frame, 5);
 							function frame(){
-								if (pos == -90){
+								if (pos == 180){
 									clearInterval(id)
 								}else{
 									pos++;
@@ -31,10 +31,10 @@
 
 						function mouseOut(){
 							var elem = document.getElementById("car");
-							var pos = -90;
+							var pos = 180;
 							var id = setInterval(frame, 5);
 							function frame(){
-								if (pos == -120){
+								if (pos == 150){
 									clearInterval(id)
 								}else{
 									pos--;
@@ -45,10 +45,10 @@
 
 						function mouseClick(){
 							var elem = document.getElementById("car");
-							var pos = -90;
+							var pos = 180;
 							var id = setInterval(frame, 5);
 							function frame(){
-								if (pos == -50){
+								if (pos == 220){
 									clearInterval(id)
 									window.open("{% url 'szchober:find_a_lift' %}","_self");
 								}else{

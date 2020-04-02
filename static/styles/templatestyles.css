@@ -321,6 +321,7 @@ font-size:5em;
 }
 #welcomebox{
 background-color:gray;
+box-shadow: 3px 3px rgba(0,0,0,0.2);
 text-align:center;
 position:absolute;
 z-index:300;
@@ -330,13 +331,15 @@ height:100%;
 
 .liftcase{
     position:relative;
+	align-items: center;
+	justify-content: center-left;
+    flex-direction: column;
+	margin: auto;
     margin-top: 0%;
     display: flex;
     background: #64A874;
     text-align: center;
     max-height: 250px;
-    margin-left: -20px;
-    margin-right:-20px;
 }
 
 .lifttext{
@@ -494,11 +497,12 @@ a:link {
 	width: 700px;
 	height: 700px;
 	position: relative;
+	left: 150px;
 	z-index:0;
-	top: -140px;
-	left: -120px;
 	background: url("/static/images/car.png");
-	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 225%;
 }
 
 .gradient-button {
