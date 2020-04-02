@@ -148,7 +148,7 @@ def user_login(request):
                 return HttpResponse("Your account is disabled")
         else:
             print("Invalid login details")
-            return HttpResponse("Invalid login details supplied")
+            return HttpResponse("Invalid login details supplied" + "<br><a href='/szchober/'>Homepage</a>")
     else:
         return render(request, 'szchober/login.html')
 
