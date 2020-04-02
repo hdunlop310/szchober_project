@@ -434,7 +434,7 @@ a:link {
 
 #map {
     height: 600px;  
-    width: 1200px;  
+    max-width: 1200px;  
     align-self: right;
     text-align: center;
     position: fixed;
