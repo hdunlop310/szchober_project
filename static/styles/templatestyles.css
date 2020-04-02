@@ -282,8 +282,22 @@ span {
     text-align: center;
 
 }
+#welcomebox h1{
+padding-top:4%;
+font-family:Verdana,Geneva,Tahoma,sans-serif;
+font-size:5em;
+}
+#welcomebox{
+background-color:gray;
+text-align:center;
+position:absolute;
+z-index:300;
+width:100%;
+height:100%;
+}
 
 .liftcase{
+    position:relative;
     margin-top: 0%;
     display: flex;
     background: #64A874;

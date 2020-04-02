@@ -106,8 +106,7 @@ def add_driver(forename, surname, password, email, phone_number, rating, review,
 
 
 def add_rider(forename, surname, password, email, phone_number, rating, review, address, postcode, rider_id):
-    r = \
-        Rider.objects.get_or_create(forename=forename, surname=surname, password=password,
+    r = Rider.objects.get_or_create(forename=forename, surname=surname, password=password,
                                     email=email,
                                     phone_number=phone_number,
                                     rating=rating, review=review, address=address, postcode=postcode,
