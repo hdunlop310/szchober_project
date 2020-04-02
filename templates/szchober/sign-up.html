@@ -7,10 +7,10 @@
     {% block body_block %}
          <section class="boxed">
                     <div>
-                        <h3 style="display: inline;">Become a Driver</h3>
+                        <h3 style="display: inline; background-color:lightgray;">Become a Driver</h3>
                     </div>
                     <div>
-                        <h3 style="display: inline">Become a Rider</h3>
+                        <h3 style="display: inline; background-color:lightgray;">Become a Rider</h3>
                     </div>
                     <div>
                         <a href="{% url 'szchober:become-a-driver' %}"><img src="../../static/images/carf.png" alt="car" style= "width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;" ></a>
@@ -20,25 +20,26 @@
                         <a href= "{% url 'szchober:become-a-rider' %}"><img src="../../static/images/seatblack.png" alt="car" style="width: 300px; border: 2px rgb(44, 131, 83) solid; background-color: #64A874;"></a>
 
                     </div>
-        </section>            
+        </section>
 
     <div id="loginmodal" class="modal">
 
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Log in</h3>
-            <form action="process.php" method="POST">
-                <input class="oneperline" placeholder="Email" type="text" name="loginemail">
-                <input class="oneperline" placeholder="Password" type="text" name="loginpassword">
+            <form id="login_form" method="post" action="{% url 'szchober:login' %}">
+                {% csrf_token %}
+                <input class="oneperline" type="text" name="username" value="" placeholder="Email" size="15" /> <br />
+                <input class="oneperline" type="password" name="password" value="" placeholder="Password" size="20" /> <br />
                 <input class="submitbutton" type="submit" name="loginbutton" value="Sign me in" style="float: right;">
-                
-                
+
+
             </form>
 
         </div>
-      
+
     </div>
-      
+
     <script>
         var modal = document.getElementById("loginmodal");
         var btn = document.getElementById("modalbutton");
