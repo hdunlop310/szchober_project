@@ -33,9 +33,10 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Log in</h3>
-            <form action="process.php" method="POST">
-                <input class="oneperline" placeholder="Email" type="text" name="loginemail">
-                <input class="oneperline" placeholder="Password" type="text" name="loginpassword">
+            <form id="login_form" method="post" action="{% url 'szchober:login' %}">
+                {% csrf_token %}
+                <input class="oneperline" type="text" name="username" value="" placeholder="Email" size="15" /> <br />
+                <input class="oneperline" type="password" name="password" value="" placeholder="Password" size="20" /> <br />
                 <input class="submitbutton" type="submit" name="loginbutton" value="Sign me in" style="float: right;">
                 
                 
