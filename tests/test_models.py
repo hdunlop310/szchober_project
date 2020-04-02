@@ -204,16 +204,16 @@ class LiftModelTest(TestCase):
 class FeedbackModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        Feedback.objects.create(feedback_id='feedback_id', description="good app")
+        Feedback.objects.create(name='name', description="good app")
 
     def setUp(self):
         print("setUp: Run once for every test method to setup clean data.")
         pass
 
-    def test_feedback_id_label(self):
-        feedback_feedback_id = Feedback.objects.get(id=1)
-        field_label = feedback_feedback_id._meta.get_field('feedback_id').verbose_name
-        self.assertEquals(field_label, 'feedback id')
+    def test_feedback_name_label(self):
+        feedback_name = Feedback.objects.get(id=1)
+        field_label = feedback_name._meta.get_field('name').verbose_name
+        self.assertEquals(field_label, 'name')
 
     def test_feedback_description_label(self):
         feedback_description = Feedback.objects.get(id=1)
