@@ -340,6 +340,7 @@ height:100%;
     background: #64A874;
     text-align: center;
     max-height: 250px;
+    z-index:3;
 }
 
 .lifttext{
@@ -358,7 +359,15 @@ height:100%;
     margin-bottom: auto;
 }
 
-
+.cover{
+background-color:#64A874;
+position:absolute;
+margin-top:-100px;
+margin-left:-100px;
+min-width:100%;
+z-index:2;
+height:70%;
+}
 
 *{
   margin: 0;
