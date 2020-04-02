@@ -1,35 +1,10 @@
 <!DOCTYPE html>
+{% extends 'szchober/base.html' %}
 {% load staticfiles %}
 <html>
-    <head>
-        <title>Szch&#246ber.</title>
-        <!-- <link rel="stylesheet" type="text/css" href="{% static "styles/templatestyles.css" %}" > -->
-        <link rel="stylesheet" type="text/css" href="../../static/styles/templatestyles.css">
-    </head>
-    <body>
-        <header id="main-header">
-            <div class="main-header">
-                <a href="{% url 'szchober:index' %}"><h1>Szch<span>&#246</span>ber.</h1></a>
-
-            </div>
-        </header>
-            <nav id="navbar">
-                <ul class="navbar-left">
-                    <li><a href="{% url 'szchober:become-a-driver' %}">Driver</a></li>
-                    <li><a href="{% url 'szchober:become-a-rider' %}">Rider</a></li>
-                    <li ><a href="{% url 'szchober:about-us' %}" style="color: rgb(44, 131, 83)">About us</a></li>
-                </ul>
-                <ul class="navbar-right">
-                    {% if registered %}
-                    <li class="login"><a href="#">My Account</a></li>
-                    {% else %}
-                    <li class="login"><a href="#" id="modalbutton">Log in</a></li>
-                    <li class="signup"><a href="#" style="color: rgb(44, 131, 83);">Sign up</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
-        <h1 style="font-size: 18pt; visibility: hidden;">You can't see me</h1>
-        <br>
+   {% block title_block %}About Us{% endblock %}
+    {% block body_block %}
+   <br/>
         <section class="boxed">
                     <div>
                         <h3 style="display: inline;">What is a Driver?</h3>
@@ -76,25 +51,7 @@
         </script>
 
 
-    <footer>
-        <br>
-        <nav id="navbar">
-            <ul class="navbar-left">
-                <li><a href="#"><img src="../../static/images/420px-Globe_icon.svg.png" alt=""></a></li>
-                <li><a href="#">
-                    <div>
-                        <h3 style="color: black;">Contact us</h3>
-                        <h1 style="color: rgb(44, 131, 83); font-size: 10px; padding-top: 5px ;">+44 749 4671 324</h1>
-                        <a href="{% url 'szchober:feedback' %}"><h1 style="color: rgb(44, 131, 83); font-size: 10px; padding-top: 5px ;">Feedback</h1></a>
-                    </div>
-                </a></li>
-            </ul>
-            <ul class="navbar-right">
-                <li><a href="http://hyperurl.co/pt4i93"><img src="../../static/images/download-on-app-store-png-2.png" alt=""></a></li>
-                <li><a href="#"><img src="../../static/images/socials.png" alt=""></a></li>
-            </ul>
-        </nav>
-    </footer>
+
 
     
     <div id="loginmodal" class="modal">
@@ -131,5 +88,5 @@
             }
         }
     </script>
-    </body>
+     {% endblock %}
 </html>

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+{% extends 'szchober/base.html' %}
 <html>
-<head>
-<title>Logout</title>
-</head>
-<body>You have logged out</body>
+
+{% block title_block %}Log out{% endblock %}
+
+{% block body_block %}
+<h2>You have logged out<h2/>
 <li><a href="{% url 'rango:index' %}">Index</a></li>
+    {% endblock %}
 </html>

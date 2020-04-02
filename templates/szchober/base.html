@@ -8,27 +8,95 @@
 
 		   {% endblock %}
 	</title>
+	  <link rel="stylesheet" href="{% static "styles/templatestyles.css" %}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div>
+<header id="main-header"style="background-color:black;">
+            <div class="main-header">
+                <a href="{% url 'szchober:index' %}"><h1>Szch<span>&#246</span>ber.</h1></a>
+
+            </div>
+        </header>
+           <nav class="navbar navbar-inverse"style="background-color:black; margin-bottom:0px;">
+			    <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'szchober:become-a-driver' %}">Driver</a></li>
+                    <li><a href="{% url 'szchober:become-a-rider' %}">Rider</a></li>
+                    <li ><a href="{% url 'szchober:about-us' %}">About us</a></li>
+                </ul>
+               <ul class="nav navbar-nav navbar-right">
+                    {% if registered %}
+                    <li class="login"><a href="#">My Account</a></li>
+                    {% else %}
+                    <li class="login"><a href="#" id="modalbutton">Log in</a></li>
+                    <li class="signup"><a href="#" >Sign up</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+    <div class="container-fluid" style="padding:100px;">
     {% block body_block %}
     {% endblock %}
     </div>
-    <hr />
-    <div>
-		<ul>
-		{% if user.is_authenticated %}
-			<!-- Show these links when the user is logged in -->
-			<li><a href="{% url 'szchober:logout' %}">Logout</a></li>
-		{% else %}
-			<!-- Show these links when the user is NOT logged in -->
-			<li><a href="{% url 'szchober:sign_up' %}">Sign Up</a></li>
-			<li><a href="{% url 'szchober:login' %}">Login</a></li>
-		{% endif %}
-			<!-- Outside the conditional statements, ALWAYS show -->
-			<li><a href="{% url 'szchober:about-us' %}">About</a></li>
-			<li><a href="{% url 'szchober:index' %}">Index</a></li>
-		</ul>	
-    </div>
+
+
+    <!-- Site footer -->
+    <footer class="site-footer" >
+      <div class="container" >
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">We aim to provide the best car-sharing experience for the community with goals of improving your daily commuting lifestyle</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Contact us</h6>
+            <ul class="footer-links">
+              <li><h6>Email:</h6></li>
+              <li>support@szchober.com</li>
+              <li><h6>Phone:</h6></li>
+              <li>+44 749 4671 324</li>
+              <li><h6>Helpdesk Opening Hours:</h6></li>
+              <li>8.30am to 7pm</li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'szchober:about-us' %}">About Us</a></li>
+              <li>Download Szchober App Here:</a></li>
+                <li><a href="http://hyperurl.co/pt4i93"><img src="{% static 'images/download-on-app-store-png-2.png' %}" alt="appstore"></a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+         Szchober.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
   </body>
 </html>

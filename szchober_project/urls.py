@@ -17,6 +17,7 @@ urlpatterns = [
     path('', views.index, name='szchober'),
     path('about-us/', views.about, name='about'),
     path('feedback/', views.feedback, name='feedback'),
+    path('sign-up/', views.sign_up, name='signup'),
     path('szchober/', include('szchober.urls')),
     path('admin/', admin.site.urls),
 ]
